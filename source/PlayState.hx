@@ -992,7 +992,7 @@ class PlayState extends MusicBeatState
 		var credits:String;
 		switch (SONG.song.toLowerCase())
 		{
-			case 'ugh:
+			case 'ugh':
 				credits = 'Ikvi x Sion Best ship!';
 			default:
 				credits = '';
