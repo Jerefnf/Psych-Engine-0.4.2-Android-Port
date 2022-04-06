@@ -19,7 +19,7 @@ class ClientPrefs {
 	public static var violence:Bool = true;
 	public static var camZooms:Bool = true;
 	public static var hideHud:Bool = false;
-	public static var iconBoping:Bool = false;
+	public static var iconBoping:Bool = true;
 	public static var noteOffset:Int = 0;
 	public static var speed:Float = 2;
 	public static var noteSize:Float = 0.7;
@@ -27,21 +27,21 @@ class ClientPrefs {
 	public static var arrowHSV:Array<Array<Int>> = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
 	public static var imagesPersist:Bool = false;
 	public static var ghostTapping:Bool = true;
-	public static var timeBarType:String = 'Time Left';
+	public static var timeBarType:String = 'Song Name';
 	public static var keTimeBar:Bool = false;
 	public static var arrowOpacity:Float = 1;
 	public static var laneOpacity:Float = 1;
 	public static var healthBarAlpha:Float = 1;
-	public static var playHitSounds:Bool = false;
+	public static var playHitSounds:Bool = true;
 	public static var dynamicCam:Bool = false;
 	public static var opponentLaneOpacity:Float = 1;
-	public static var healthCounter:Bool = false;
-	public static var opponentArrowOpacity:Float = 1;
-	public static var memoryCounter:Bool = false;
-	public static var judgements:Bool = false;
+	public static var healthCounter:Bool = true;
+	public static var opponentArrowOpacity:Float = 0.8;
+	public static var memoryCounter:Bool = true;
+	public static var judgements:Bool = true;
 	public static var tabi:Bool = false;
 	public static var tabiMax:Int = 3;
-	public static var scoreType:String = 'Kade Engine';
+	public static var scoreType:String = 'Psych Engine';
 	public static var noAntimash:Bool = false;
 
 	//Every key has two binds, these binds are defined on defaultKeys! If you want your control to be changeable, you have to add it on ControlsSubState (inside OptionsState.hx)'s list

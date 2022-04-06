@@ -32,7 +32,7 @@ class FlashingState extends MusicBeatState
 			Random Engine by randomxd/n
 			Psych Port by Saw and Sirox",
 			32);
-		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+		warnText.setFormat("comic.ttf", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
 

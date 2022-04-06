@@ -69,16 +69,16 @@ class PlayState extends MusicBeatState
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
 	public static var ratingStuff:Array<Dynamic> = [
-		['F', 0.2], //From 0% to 19%
-		['E', 0.4], //From 20% to 39%
-		['E+', 0.5], //From 40% to 49%
-		['B', 0.6], //From 50% to 59%
-		['B+', 0.69], //From 60% to 68%
-		['Nicee', 0.7], //69%
-		['A', 0.8], //From 70% to 79%
-		['A+', 0.9], //From 80% to 89%
-		['S', 1], //From 90% to 99%
-		['S+', 1] //The value on this one isn't used actually, since Perfect is always "1"
+		['Fuckin Player', 0.2], //From 0% to 19%
+		['Shit', 0.4], //From 20% to 39%
+		['Bad', 0.5], //From 40% to 49%
+		['Bruh', 0.6], //From 50% to 59%
+		['Mehh', 0.69], //From 60% to 68%
+		['Good', 0.7], //69%
+		['Nice', 0.8], //From 70% to 79%
+		['Pro', 0.9], //From 80% to 89%
+		['Sick!', 1], //From 90% to 99%
+		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 	
 	#if (haxe >= "4.0.0")
@@ -821,7 +821,7 @@ class PlayState extends MusicBeatState
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 20, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt.setFormat(Paths.font("rubik.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
@@ -988,14 +988,36 @@ class PlayState extends MusicBeatState
 		iconP2.visible = !ClientPrefs.hideHud;
 		add(iconP2);
 		reloadHealthBarColors();
+		
+		var credits:String;
+		switch (SONG.song.toLowerCase())
+		{
+			case 'ugh:
+				credits = 'Ikvi x Sion Best ship!';
+			default:
+				credits = '';
+		}
+		var randomThingy:Int = FlxG.random.int(0, 0);
+		var engineName:String = 'stupid';
+		switch(randomThingy)
+	    {
+			case 0:
+				engineName = 'Random ';
+		}
+		var creditsText:Bool = credits != '';
+		var textYPos:Float = healthBarBG.y + 50;
+		if (creditsText)
+		{
+			textYPos = healthBarBG.y + 30;
+		}
 
 		if (ClientPrefs.scoreType == 'Psych Engine') {
                 scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-                scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+                scoreTxt.setFormat(Paths.font("rubik.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                 }
                 else if (ClientPrefs.scoreType == 'Kade Engine') {
                 scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 50, 0, "", 20);
-                scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+                scoreTxt.setFormat(Paths.font("rubik.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                 }
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
@@ -1003,7 +1025,7 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.scoreType != 'Disabled') { add(scoreTxt); }
 
 		healthCounter = new FlxText(0, healthBarBG.y - 48, FlxG.width, "" , 20);
-                healthCounter.setFormat(Paths.font("vcr.ttf"), 19, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+                healthCounter.setFormat(Paths.font("rubik.ttf"), 19, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                 healthCounter.scrollFactor.set();
                 healthCounter.borderSize = 1.25;
                 healthCounter.alpha = 1;
@@ -1011,17 +1033,17 @@ class PlayState extends MusicBeatState
                 if(ClientPrefs.healthCounter) { add(healthCounter); }
 
 		if (!ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + Engine (PE 0.4.2) + credits , 16);
                 }
                 else if (ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + " | no Antimash! " , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + Engine (PE 0.4.2) + credits + " | no Antimash! " , 16);
                 }
-			versionTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			versionTxt.setFormat(Paths.font("rubik.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                         versionTxt.scrollFactor.set();
                         add(versionTxt);
 		
 		judgementCounter = new FlxText(20, 0, 0, "", 20);
-                judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+                judgementCounter.setFormat(Paths.font("rubik.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                 judgementCounter.borderSize = 2;
                 judgementCounter.borderQuality = 2;
                 judgementCounter.scrollFactor.set();
@@ -1029,7 +1051,7 @@ class PlayState extends MusicBeatState
                 if(ClientPrefs.judgements) {add(judgementCounter);}
 		
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.setFormat(Paths.font("rubik.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -1047,7 +1069,7 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		laneunderlayOpponent.cameras = [camHUD];
-                laneunderlay.cameras = [camHUD];
+        laneunderlay.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
@@ -2133,11 +2155,11 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingString == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' //  Misses: ' + songMisses + ' // Rank: ' + ratingString;
+			scoreTxt.text = 'Score: ' + songScore + ' //  Misses: ' + songMisses + ' Port By Jere ' + // Rank: ' + ratingString;
 			judgementCounter.text = 'Sicks: 0 \nGoods: 0\nBads: 0\nShits: 0\ne';
                         healthCounter.text = 'Health: 50%';
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' // Misses: ' + songMisses + ' // Acc: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // Rank: ' + ratingString + ' (' + ratingFC + ')' ;//peeps wanted no integer rating
+			scoreTxt.text = 'Score: ' + songScore + ' // Misses: ' + songMisses + ' Port By Jere ' + // Acc: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // Rank: ' + ratingString + ' (' + ratingFC + ')' ;//peeps wanted no integer rating
                         judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nE';
                         healthCounter.text = 'Health: ' + Math.round(health * 50) + '%'  ;
 		}
