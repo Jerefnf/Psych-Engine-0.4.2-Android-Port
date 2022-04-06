@@ -989,28 +989,6 @@ class PlayState extends MusicBeatState
 		add(iconP2);
 		reloadHealthBarColors();
 		
-		var credits:String;
-		switch (SONG.song.toLowerCase())
-		{
-			case 'ugh':
-				credits = 'Ikvi x Sion Best ship!';
-			default:
-				credits = '';
-		}
-		var randomThingy:Int = FlxG.random.int(0, 0);
-		var engineName:String = 'stupid';
-		switch(randomThingy)
-	    {
-			case 0:
-				engineName = 'Random ';
-		}
-		var creditsText:Bool = credits != '';
-		var textYPos:Float = healthBarBG.y + 50;
-		if (creditsText)
-		{
-			textYPos = healthBarBG.y + 30;
-		}
-
 		if (ClientPrefs.scoreType == 'Psych Engine') {
                 scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
                 scoreTxt.setFormat(Paths.font("rubik.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -1033,10 +1011,10 @@ class PlayState extends MusicBeatState
                 if(ClientPrefs.healthCounter) { add(healthCounter); }
 
 		if (!ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + "Engine (PE 0.4.2)" + credits , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + "Random Engine (PE 0.4.2)" , 16);
                 }
                 else if (ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + "Engine (PE 0.4.2)" + credits + " | no Antimash! " , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + "Random Engine (PE 0.4.2)" + " | no Antimash! " , 16);
                 }
 			versionTxt.setFormat(Paths.font("rubik.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                         versionTxt.scrollFactor.set();
@@ -2155,11 +2133,11 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingString == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' //  Misses: ' + songMisses + "Port By Jere" + // Rank: ' + ratingString;
+			scoreTxt.text = 'Score: ' + songScore + ' //  Misses: ' + songMisses + ' // Ranking: ' + ratingString;
 			judgementCounter.text = 'Sicks: 0 \nGoods: 0\nBads: 0\nShits: 0\ne';
                         healthCounter.text = 'Health: 50%';
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' // Misses: ' + songMisses + "Port By Jere" + // Acc: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // Rank: ' + ratingString + ' (' + ratingFC + ')' ;//peeps wanted no integer rating
+			scoreTxt.text = 'Score: ' + songScore + ' // Misses: ' + songMisses + ' // Accuracy: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // Ranking: ' + ratingString + ' (' + ratingFC + ')' ;//peeps wanted no integer rating
                         judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nE';
                         healthCounter.text = 'Health: ' + Math.round(health * 50) + '%'  ;
 		}
