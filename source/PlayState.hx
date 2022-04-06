@@ -1033,10 +1033,10 @@ class PlayState extends MusicBeatState
                 if(ClientPrefs.healthCounter) { add(healthCounter); }
 
 		if (!ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + Engine (PE 0.4.2) + credits , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + "Engine (PE 0.4.2)" + credits , 16);
                 }
                 else if (ClientPrefs.noAntimash) {
-                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + Engine (PE 0.4.2) + credits + " | no Antimash! " , 16);
+                        versionTxt = new FlxText(5, FlxG.height - 24, 0, SONG.song + " - " + CoolUtil.difficultyString() + engineName + "Engine (PE 0.4.2)" + credits + " | no Antimash! " , 16);
                 }
 			versionTxt.setFormat(Paths.font("rubik.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
                         versionTxt.scrollFactor.set();
