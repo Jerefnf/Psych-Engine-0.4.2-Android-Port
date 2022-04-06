@@ -35,7 +35,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
 		var option:Option = new Option('Score Type:',                                                                  
-			"What should be the score type?",
+			"¿Cuál debería ser el estilo de puntuación?",
                         'scoreType',
                         'string',
                         'Psych Engine',
@@ -43,7 +43,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
 		var option:Option = new Option('Memory Counter',
-			'If unchecked, disables memory counter.',
+			'indicador de cuanto llevas o vas gastando la memoria.',
                         'memoryCounter',
                         'bool',
                         true);
@@ -51,14 +51,14 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.onChange = onChangeMemoryCounter;
 
 		var option:Option = new Option('Health Counter',
-                        'If unchecked, hides the health counter.',
+                        'Contador de Vida.',
                         'healthCounter',
                         'bool',
                         true);
                 addOption(option);
 		
 		var option:Option = new Option('Time Bar:',
-			"What should the Time Bar display?",
+			"¿Qué debe mostrar la barra de tiempo?",
 			'timeBarType',
 			'string',
 			'Time Left',
@@ -67,27 +67,27 @@ class VisualsUISubState extends BaseOptionsMenu
 
 
 		var option:Option = new Option('Judgements',
-                        'If unchecked, hides judgements.',
+                        'Mostrador de Shits, Goods, Sicks y Bads total..',
                         'judgements',
                         'bool',
                         true);
                 addOption(option);
 
 		var option:Option = new Option('No Antimash',
-                        'If checked, disables antimash.',
+                        'Desactivar Antimash, spam libre sin restricciones.',
                         'noAntimash',
                         'bool',
                         true);
                 addOption(option);
 		
 		var option:Option = new Option('KE Timebar',
-                        'If checked, uses the KE timebar.',
+                        'Usar el estilo barra de Kade Engine.',
                         'keTimeBar',
                         'bool',
                         false);
                 addOption(option);
 		var option:Option = new Option('Health Bar Opacity',
-			'How Opaque should the health bar and icons be.',
+			'¿Qué tan opacos deben ser la barra de salud y los íconos?.',
 			'healthBarAlpha',
 			'percent',
 			1);
@@ -99,7 +99,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Arrows Opacity',
-                        'How Opaque should the arrows be.',
+                        '¿Qué tan opacas deben ser las flechas?.',
 			'arrowOpacity',
 			'percent',
                         1);
@@ -111,7 +111,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
 		var option:Option = new Option('Lane Opacity',
-                        'How Opaque should the lane underlay be.',
+                        '¿Qué tan opaco debe ser el Lane Underlay?.',
                         'laneOpacity',
                         'percent',
                         1);
@@ -135,7 +135,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
                 var option:Option = new Option('Enemy Arrows Opacity',
-                        'How Opaque should the opponent arrows be.',
+                        '¿Qué tan opacas deben ser las flechas del oponente?.',
                         'opponentArrowOpacity',
                         'percent',
                         1);
@@ -147,7 +147,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
 		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
+			'Contador de FPS, fotogramas por segundo.',
 			'showFPS',
 			'bool',
 			true);

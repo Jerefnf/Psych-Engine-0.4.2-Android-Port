@@ -35,14 +35,14 @@ class VisualsUISubState extends BaseOptionsMenu
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
 		var option:Option = new Option('Note Splashes',
-			"If unchecked, hitting \"Sick!\" notes won't show particles.",
+			"Si no se marca, al presionar las notas \"¡Sick!\" no se mostrarán las NoteSplash.",
 			'noteSplashes',
 			'bool',
 			true);
 		addOption(option);
 
 		var option:Option = new Option('Score Type:',
-			"What should the score be like?",
+			"¿Cuál debería ser el estilo de puntuación?",
                         'scoreType',
                         'string',
                         'Kade Engine',
@@ -50,7 +50,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
 		var option:Option = new Option('Memory Counter',
-			'If checked, enables memory counter.',
+			'indicador de cuanto llevas o vas gastando la memoria.',
                         'memoryCounter',
                         'bool',
                         false);
@@ -58,42 +58,42 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.onChange = onChangeMemoryCounter;
 /*
 		var option:Option = new Option('Dynamic Cam',
-                        'If checked, enables dynamic cam movement it only works with vanilla FNF!.',
+                        'Si está marcado, habilita el movimiento dinámico de la leva. ¡Solo funciona con Vanilla FNF!.',
                         'dynamicCam',
                         'bool',
                         false);
                 addOption(option); //not working
 */
 		var option:Option = new Option('Play Hit Sounds',
-                        'If checked, enables hit sounds.',
+                        'Sonido al presionar una nota.',
                         'playHitSounds',
                         'bool',
                         false);
                 addOption(option);
 
 		var option:Option = new Option('Icon Boping',
-                        'If checked, enables icon Boping.',
+                        'Movimiento de los íconos.',
                         'iconBoping',
                         'bool',
                         false);
                 addOption(option);
 
 		var option:Option = new Option('Hide HUD',
-			'If checked, hides most HUD elements.',
+			'Ocultar el UI, apto por si tienes pocos fps.',
 			'hideHud',
 			'bool',
 			false);
 		addOption(option);
 
 		var option:Option = new Option('Health Counter',
-                        'If checked, enables the health counter.',
+                        'Contador de vida.',
                         'healthCounter',
                         'bool',
                         false);
                 addOption(option);
 		
 		var option:Option = new Option('Time Bar:',
-			"What should the Time Bar display?",
+			"¿Qué debe mostrar la barra de tiempo?",
 			'timeBarType',
 			'string',
 			'Time Left',
@@ -101,35 +101,35 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Flashing Lights',
-			"Uncheck this if you're sensitive to flashing lights!",
+			"¡Desmarque esto si es sensible a las luces intermitentes!",
 			'flashing',
 			'bool',
 			true);
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooms',
-			"If unchecked, the camera won't zoom in on a beat hit.",
+			"Si no se marca, la cámara no se acercará en un golpe de ritmo.",
 			'camZooms',
 			'bool',
 			true);
 		addOption(option);
 
 		var option:Option = new Option('Judgements',
-                        'If unchecked, hides judgements.',
+                        'Mostrador de Shits, Goods, Sicks y Bads total.',
                         'judgements',
                         'bool',
                         false);
                 addOption(option);
 		
 		var option:Option = new Option('KE Timebar',
-                        'If checked, uses the KE timebar.',
+                        'Usar el estilo barra de Kade Engine.',
                         'keTimeBar',
                         'bool',
                         false);
                 addOption(option);
 
 		var option:Option = new Option('Health Bar Opacity',
-			'How Opaque should the health bar and icons be.',
+			'¿Qué tan opacos deben ser la barra de salud y los íconos?.',
 			'healthBarAlpha',
 			'percent',
 			1);
@@ -141,7 +141,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Arrows Opacity',
-                        'How Opaque should the arrows be.',
+                        '¿Qué tan opacas deben ser las flechas?.',
 			'arrowOpacity',
 			'percent',
                         1);
@@ -177,7 +177,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 */
                 var option:Option = new Option('Enemy Arrows Opacity',
-                        'How Opaque should the opponent arrows be.',
+                        '¿Qué tan opacas deben ser las flechas del oponente?.',
                         'opponentArrowOpacity',
                         'percent',
                         1);
@@ -189,7 +189,7 @@ class VisualsUISubState extends BaseOptionsMenu
                 addOption(option);
 
 		var option:Option = new Option('FPS Counter',
-			'If unchecked, hides FPS Counter.',
+			'Contador de FPS, fotogramas por segundo.',
 			'showFPS',
 			'bool',
 			true);
